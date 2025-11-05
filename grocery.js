@@ -6,18 +6,20 @@ const cart = [
   { name: "Bananas", price: 1.25, quantity: 6 }
 ];
 
-let total = 0;
 
-function totalPrice() {
-    for (let i = 0; i < cart.length; i++) {
-      if (cart.price < 5) {
-        price *= 0.95;
-      }
-      total += cart.price * cart.quantity;
-      if (total > 100) {
-        price *= 0.9
-      }
+
+function total(cart) {
+  let total = 0;
+  cart.forEach((item) => {
+    if (item.price < 5) {
+      total += item.quantity * item.price *0.95;
+    } else {
+      total += item.quantity *item.price;
     }
+  });
+  if (total > 100) {
+    total = total * 0.9;
+  }
+  return total;
 }
-totalPrice()
-console.log(`Your final total is ${total} after all discounts.`)
+total(cart);
