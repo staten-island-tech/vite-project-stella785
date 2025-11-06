@@ -18,11 +18,11 @@ const dnsRecords = [
   { address: "youtube.com", dns: "142.250.190.46" },
 ];
 
-let x = "ABC";
+/* let x = "ABC";
 let y = "BCA";
 if (y > x) {
     console.log("x");
-}
+} */
 
 function binarySearch(records, address) {
     let low = 0;
@@ -30,13 +30,14 @@ function binarySearch(records, address) {
     while (low <= high) {
       let middle = Math.floor((low + high)/2);
       let guess = records[middle].address;
+      if (guess === address) {
+        return records[middle];
+      } if (guess < address) {
+        low = middle + 1;
+      } else {
+        high = middle - 1;
+      }
     }
-    if (guess === address) {
-      return records[middle];
-    } if (guess < address) {
-      low = middle + 1;
-    } else {
-      high = middle - 1;
-    }
+    return "DNS not found";
 }
-console.log(binarySearch(dnsRecords, "youtube.com"));
+console.log(binarySearch(dnsRecords, "stanford.edu"));
