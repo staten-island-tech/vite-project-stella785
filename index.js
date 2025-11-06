@@ -24,9 +24,15 @@ const books = [
         link: ""
     },
     {
-        title: "",
-        author: "",
-        genre: "",
+        title: "Lord of the Flies",
+        author: "William Golding",
+        genre: ["Allegory", "YA"],
         link: ""
-    }
+    },
+    {
+        title: "I Am Rebel",
+        author: "Ross Montgomery",
+        genre: "Adventure",
+        link: ""
+    },
 ]
