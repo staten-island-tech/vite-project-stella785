@@ -36,3 +36,29 @@ const books = [
         link: "https://www.barnesandnoble.com/w/i-am-rebel-ross-montgomery/1144510238?ean=9781536246803"
     },
 ]
+
+function show(books) {
+    const container = document.querySelector(".container");
+    container.insertAdjacentHTML("afterbegin", 
+    `<div class="card">
+        <h2 class="card-header">${books.title}</h2>
+        <h3 class="card-author">${books.author}</h3>
+        <h4 class="card-genre">${books.genre}</h3>
+        <a href="${books.link}">
+          <button>Read</button>
+        </a>
+    </div>`
+    );
+}
+books.forEach((books) => show(books));
+
+
+document.querySelector(".btn").addEventListener("click", function () {
+  if (document.body.classList.contains("light")) {
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+  } else {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+  }
+});

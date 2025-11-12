@@ -1,0 +1,29 @@
+:root {
+  --light-background: FFFFFF;
+  --light-font: 263D42;
+  --dark-background: 494368;
+  --dark-font: ;
+
+  /* Intentions */
+  --primary: var(--light-blue);
+  --secondary: var(--dark-blue);
+}
+
+.light {
+  --primary: var(--light-blue);
+  --secondary: var(--dark-blue);
+}
+
+.dark {
+  --primary: var(--light-red);
+  --secondary: var(--dark-red);
+}
+
+.hero {
+  background-color: var(--primary);
+}
+
+.main {
+  background-color: var(--secondary);
+  height: 90vh;
+}
