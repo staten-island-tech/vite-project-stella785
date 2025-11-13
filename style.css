@@ -1,22 +1,25 @@
 :root {
-  --light-background: FFFFFF;
-  --light-font: 263D42;
-  --dark-background: 494368;
-  --dark-font: ;
+  --light-background: #F5F5F5;
+  --light-font: #212121;
+
+  --dark-background: #130005;
+  --dark-font: #FFFFFF;
+
+    --button: #9E9E9E;
 
   /* Intentions */
-  --primary: var(--light-blue);
-  --secondary: var(--dark-blue);
+  --primary: var(--light-background);
+  --secondary: var(--light-font);
 }
 
 .light {
-  --primary: var(--light-blue);
-  --secondary: var(--dark-blue);
+  --primary: var(--light-background);
+  --secondary: var(--light-font);
 }
 
 .dark {
-  --primary: var(--light-red);
-  --secondary: var(--dark-red);
+  --primary: var(--dark-background);
+  --secondary: var(--dark-font);
 }
 
 .hero {

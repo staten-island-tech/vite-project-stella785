@@ -37,6 +37,12 @@ const books = [
     },
 ]
 
+//make an array for books (done)
+//light/dark mode
+//filter genre
+//filter by search?
+//upload books not on site
+
 function show(books) {
     const container = document.querySelector(".container");
     container.insertAdjacentHTML("afterbegin", 
@@ -62,3 +68,10 @@ document.querySelector(".btn").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
+
+function filter(genre) {
+    const container = document.querySelector(".container");
+    container.insertAdjacentHTML("",
+        ``
+    )
+}
