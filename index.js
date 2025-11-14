@@ -1,3 +1,4 @@
+
 const books = [
     {
         title: "Assistant to the Villain",
@@ -59,6 +60,15 @@ function show(books) {
 books.forEach((books) => show(books));
 
 
+function filter(genre) {
+    const container = document.querySelector(".container");
+    container.insertAdjacentHTML("",
+        ``
+    )
+}
+
+////////////////////////////////////
+
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
     document.body.classList.add("dark");
@@ -68,10 +78,3 @@ document.querySelector(".btn").addEventListener("click", function () {
     document.body.classList.remove("dark");
   }
 });
-
-function filter(genre) {
-    const container = document.querySelector(".container");
-    container.insertAdjacentHTML("",
-        ``
-    )
-}
