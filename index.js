@@ -59,13 +59,27 @@ function show(books) {
 }
 books.forEach((books) => show(books));
 
-
-function filter(genre) {
-    const container = document.querySelector(".container");
-    container.insertAdjacentHTML("",
-        ``
-    )
+function all() {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+        card.style.display = "inline-block";
+    })
 }
+document.querySelector("").addEventListener("", all);
+
+function filterbyGenre(genre) {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+        const cardCategory = card.getAttribute(".card-genre");
+        if (cardCategory === genre) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    })
+}
+document.querySelector("").addEventListener("click", () => filterbyGenre(""));
+document.querySelector("").addEventListener("click", () => filterbyGenre(""));
 
 ////////////////////////////////////
 
