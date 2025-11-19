@@ -40,8 +40,7 @@ const books = [
 
 //make an array for books (done)
 //light/dark mode
-//filter genre
-//filter by search?
+//filter by search
 //upload books not on site
 
 function show(books) {
@@ -59,27 +58,20 @@ function show(books) {
 }
 books.forEach((books) => show(books));
 
-function all() {
+function filter(ask) {
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
-        card.style.display = "inline-block";
-    })
-}
-document.querySelector("").addEventListener("", all);
-
-function filterbyGenre(genre) {
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card) => {
-        const cardCategory = card.getAttribute(".card-genre");
-        if (cardCategory === genre) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
+        if (books.genre === ask || books.title === ask || books.author === ask) {
+            card.style.display = "inline-block";
         }
     })
 }
-document.querySelector("").addEventListener("click", () => filterbyGenre(""));
-document.querySelector("").addEventListener("click", () => filterbyGenre(""));
+document.querySelector('searchbar').addEventListener('input', (ask) => filter(ask));
+
+function add(card) {
+    const container = document.querySelector(".container");
+    
+}
 
 ////////////////////////////////////
 
