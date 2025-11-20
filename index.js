@@ -40,7 +40,7 @@ const books = [
 
 //make an array for books (done)
 //light/dark mode
-//filter by search
+//filter by search (done)
 //upload books not on site
 
 function show(books) {
@@ -68,13 +68,18 @@ function filter(ask) {
 }
 document.querySelector('searchbar').addEventListener('input', (ask) => filter(ask));
 
-const DOMSelectors = {
-    title: document.getElementById("title"),
-    author: document.getElementById("author"),
-    genre: document.getElementById("genre"),
-    link: document.getElementById("link")
-}
 
+document.getElementById("form").addEventListener("submit", function(add) {
+    add.preventDefault();
+    let books = {
+        title: document.getElementById("title"),
+        author: document.getElementById("author"),
+        genre: document.getElementById("genre"),
+        link: document.getElementById("link")
+    }
+    show(books);
+    clearFields();
+})
 
 
 ////////////////////////////////////
