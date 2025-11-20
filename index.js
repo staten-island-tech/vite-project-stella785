@@ -68,10 +68,14 @@ function filter(ask) {
 }
 document.querySelector('searchbar').addEventListener('input', (ask) => filter(ask));
 
-function add(card) {
-    const container = document.querySelector(".container");
-    
+const DOMSelectors = {
+    title: document.getElementById("title"),
+    author: document.getElementById("author"),
+    genre: document.getElementById("genre"),
+    link: document.getElementById("link")
 }
+
+
 
 ////////////////////////////////////
 
