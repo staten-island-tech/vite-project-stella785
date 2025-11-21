@@ -39,7 +39,7 @@ const books = [
 ]
 
 //make an array for books (done)
-//light/dark mode
+//light/dark mode (done)
 //filter by search (done)
 //upload books not on site
 
