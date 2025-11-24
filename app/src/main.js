@@ -68,10 +68,10 @@ function filter(ask) {
         }
     })
 }
-document.querySelector('searchbar').addEventListener('input', (ask) => filter(ask));
+document.querySelector('.search').addEventListener('input', (ask) => filter(ask));
 
 
-document.getElementById("form").addEventListener("submit", function(add) {
+document.getElementById(".form").addEventListener("submit", function(add) {
     add.preventDefault();
     let books = {
         title: document.getElementById("title"),

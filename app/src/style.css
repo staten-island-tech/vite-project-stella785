@@ -1,13 +1,9 @@
 :root {
   --light-background: #F5F5F5;
   --light-font: #212121;
-
   --dark-background: #130005;
   --dark-font: #FFFFFF;
-
-    --button: #9E9E9E;
-
-  /* Intentions */
+  --button: #9E9E9E;
   --primary: var(--light-background);
   --secondary: var(--light-font);
 }
@@ -56,7 +52,6 @@ body,
 }
 
 button {
-
   display: inline-block;
   outline: 0;
   cursor: pointer;
@@ -78,18 +73,35 @@ button {
                 
 }
 
-.dark, .light {
-
-}
-
 .card {
   text-align: center;
   border: 3px solid #9E9E9E;
   padding: 15px;
+  margin: 15px;
   width: 300px;
   height: 400px;
+  box-shadow: 10px 10px 10px 2px #607D8B;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 800px) {
+  .container{
+    flex-direction: column;
+  }
+  .card{
+    width: 100%;
+  }
+}
+
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.main {
+
 }
 
 .search, .upload-form {
-
+  margin: 20px;
 }
