@@ -1,4 +1,4 @@
-import './style.css'
+import "./style.css"
 
 
 const books = [
@@ -67,14 +67,14 @@ function filter() {
         const title = card.querySelector(".card-header").toLowerCase();
         const author = card.querySelector(".card-author").toLowerCase();
         const genre = card.querySelector(".card-genre").toLowerCase();
-            if (title.includes(text) || author.includes(text) || genre.includes(text)) {
-                card.style.display = "inline-block"
-            } else {
-                card.style.display = "none"
-            }
+        if (title.includes(text) || author.includes(text) || genre.includes(text)) {
+            card.style.display = "inline-block"
+        } else {
+            card.style.display = "none"
         }
-    }
-document.querySelector(".search input").addEventListener('input', filter);
+    })
+}
+document.querySelector(".search input").addEventListener("input", filter());
 
 
 document.getElementById("upload").addEventListener("submit", function(add) {
