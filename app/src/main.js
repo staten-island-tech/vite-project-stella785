@@ -60,18 +60,24 @@ function show(books) {
 }
 books.forEach((books) => show(books));
 
-function filter(ask) {
+function filter() {
     const cards = document.querySelectorAll(".card");
+    const text = document.querySelector(".search input").toLowerCase();
     cards.forEach((card) => {
-        if (books.genre === ask || books.title === ask || books.author === ask) {
-            card.style.display = "inline-block";
+        const title = card.querySelector(".card-header").toLowerCase();
+        const author = card.querySelector(".card-author").toLowerCase();
+        const genre = card.querySelector(".card-genre").toLowerCase();
+            if (title.includes(text) || author.includes(text) || genre.includes(text)) {
+                card.style.display = "inline-block"
+            } else {
+                card.style.display = "none"
+            }
         }
-    })
-}
-document.querySelector('.search').addEventListener('input', (ask) => filter(ask));
+    }
+document.querySelector(".search input").addEventListener('input', filter);
 
 
-document.getElementById(".form").addEventListener("submit", function(add) {
+document.getElementById("upload").addEventListener("submit", function(add) {
     add.preventDefault();
     let books = {
         title: document.getElementById("title"),
