@@ -62,19 +62,14 @@ books.forEach((books) => show(books));
 
 function filter() {
     const cards = document.querySelectorAll(".card");
-    const text = document.querySelector(".search input").toLowerCase();
+    const text = document.querySelector("search-input");
     cards.forEach((card) => {
-        const title = card.querySelector(".card-header").toLowerCase();
-        const author = card.querySelector(".card-author").toLowerCase();
-        const genre = card.querySelector(".card-genre").toLowerCase();
-        if (title.includes(text) || author.includes(text) || genre.includes(text)) {
-            card.style.display = "inline-block"
-        } else {
-            card.style.display = "none"
-        }
+        const title = card.querySelector(".card-header");
+        const author = card.querySelector(".card-author");
+        const genre = card.querySelector(".card-genre")
+
     })
 }
-document.querySelector(".search input").addEventListener("input", filter());
 
 
 document.getElementById("upload").addEventListener("submit", function(add) {
@@ -94,10 +89,10 @@ document.getElementById("upload").addEventListener("submit", function(add) {
 
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("light")) {
-    document.body.classList.add("dark");
     document.body.classList.remove("light");
+    document.body.classList.add("dark");
   } else {
-    document.body.classList.add("light");
     document.body.classList.remove("dark");
+    document.body.classList.add("light");
   }
 });
