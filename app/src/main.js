@@ -60,17 +60,18 @@ function show(books) {
 }
 books.forEach((books) => show(books));
 
-function filter() {
+function filter(ask) {
     const cards = document.querySelectorAll(".card");
-    const text = document.querySelector("search-input");
     cards.forEach((card) => {
-        const title = card.querySelector(".card-header");
+        const title = card.querySelector(".cardheader");
         const author = card.querySelector(".card-author");
-        const genre = card.querySelector(".card-genre")
-
+        const genre = card.querySelector(".card-genre");
+        if () {
+            card.style.display = "inline-block"
+        }
     })
 }
-
+document.querySelector(".search").addEventListener("input", (ask) => filter(ask));
 
 document.getElementById("upload").addEventListener("submit", function(add) {
     add.preventDefault();
@@ -96,3 +97,5 @@ document.querySelector(".btn").addEventListener("click", function () {
     document.body.classList.add("light");
   }
 });
+
+// (in public folder) "/img/imagename"
