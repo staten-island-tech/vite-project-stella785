@@ -63,23 +63,26 @@ books.forEach((books) => show(books));
 function filter(ask) {
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
-        const title = card.querySelector(".cardheader");
-        const author = card.querySelector(".card-author");
-        const genre = card.querySelector(".card-genre");
-        if () {
+        const title = card.querySelector(".card-header").value;
+        const author = card.querySelector(".card-author").value;
+        const genre = card.querySelector(".card-genre").value;
+        if (title.toLowerCase() === ask.toLowerCase() || author.toLowerCase() === ask.toLowerCase() || genre.toLowerCase() === ask.toLowerCase()) {
             card.style.display = "inline-block"
+        } else {
+            card.style.display = "none";
         }
     })
 }
 document.querySelector(".search").addEventListener("input", (ask) => filter(ask));
 
+
 document.getElementById("upload").addEventListener("submit", function(add) {
     add.preventDefault();
     let books = {
-        title: document.getElementById("title"),
-        author: document.getElementById("author"),
-        genre: document.getElementById("genre"),
-        link: document.getElementById("link")
+        title: document.getElementById("bookTitle"),
+        author: document.getElementById("bookAuthor"),
+        genre: document.getElementById("bookGenre"),
+        link: document.getElementById("bookLink")
     }
     show(books);
     clearFields();

@@ -4,8 +4,6 @@
   --dark-background: #130005;
   --dark-font: #FFFFFF;
   --button: #9E9E9E;
-  --primary: var(--light-background);
-  --secondary: var(--light-font);
 }
 
 .light {
