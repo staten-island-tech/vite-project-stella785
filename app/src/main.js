@@ -73,8 +73,23 @@ function filter(ask) {
         }
     })
 }
-document.querySelector(".search").addEventListener("input", (ask) => filter(ask));
+document.querySelector(".search").addEventListener("submit", (ask) => filter(ask));
 
+
+function uploadCards() {
+    const container = document.querySelector(".container");
+    const form = document.querySelector(".upload-form");
+    container.insertAdjacentHTML("beforeend", 
+    `<div class="card">
+        <h2 class="card-header">${books.title}</h2>
+        <h3 class="card-author">${books.author}</h3>
+        <h4 class="card-genre">${books.genre}</h3>
+        <a href="${books.link}">
+          <button>Read</button>
+        </a>
+    </div>`
+    );
+}
 
 document.getElementById("upload").addEventListener("submit", function(add) {
     add.preventDefault();
@@ -85,7 +100,7 @@ document.getElementById("upload").addEventListener("submit", function(add) {
         link: document.getElementById("bookLink")
     }
     show(books);
-    clearFields();
+    uploadCards();
 })
 
 
