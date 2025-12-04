@@ -62,18 +62,22 @@ books.forEach((books) => show(books));
 
 function filter(ask) {
     const cards = document.querySelectorAll(".card");
+    const search = ask.toLowerCase();
     cards.forEach((card) => {
-        const title = card.querySelector(".card-header").value;
-        const author = card.querySelector(".card-author").value;
-        const genre = card.querySelector(".card-genre").value;
-        if (title.toLowerCase() === ask.toLowerCase() || author.toLowerCase() === ask.toLowerCase() || genre.toLowerCase() === ask.toLowerCase()) {
+        const title = card.querySelector(".card-header").textContent.toLowerCase();
+        const author = card.querySelector(".card-author").textContent.toLowerCase();
+        const genre = card.querySelector(".card-genre").textContent.toLowerCase();
+        if (title === search || author === search || genre === search) {
             card.style.display = "inline-block"
         } else {
             card.style.display = "none";
         }
     })
 }
-document.querySelector(".search").addEventListener("submit", (ask) => filter(ask));
+document.querySelector(".searchBar").addEventListener("click", () => {
+    const input = document.querySelector(".search input").value;
+    filter(input);
+});
 
 
 function uploadCards() {
@@ -93,14 +97,14 @@ function uploadCards() {
 
 document.getElementById("upload").addEventListener("submit", function(add) {
     add.preventDefault();
-    let books = {
+    let book = {
         title: document.getElementById("bookTitle"),
         author: document.getElementById("bookAuthor"),
         genre: document.getElementById("bookGenre"),
         link: document.getElementById("bookLink")
     }
-    show(books);
-    uploadCards();
+    books.push(book);
+    show(book);
 })
 
 
