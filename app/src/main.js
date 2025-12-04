@@ -67,7 +67,7 @@ function filter(ask) {
         const title = card.querySelector(".card-header").textContent.toLowerCase();
         const author = card.querySelector(".card-author").textContent.toLowerCase();
         const genre = card.querySelector(".card-genre").textContent.toLowerCase();
-        if (title === search || author === search || genre === search) {
+        if (title.includes(search) || author.includes(search) || genre.includes(search)) {
             card.style.display = "inline-block"
         } else {
             card.style.display = "none";
@@ -83,7 +83,9 @@ document.querySelector(".searchBar").addEventListener("click", () => {
 function uploadCards() {
     const container = document.querySelector(".container");
     const form = document.querySelector(".upload-form");
-    container.insertAdjacentHTML("beforeend", 
+    let title =
+    let author = 
+    form.insertAdjacentHTML("beforeend", 
     `<div class="card">
         <h2 class="card-header">${books.title}</h2>
         <h3 class="card-author">${books.author}</h3>
@@ -94,7 +96,6 @@ function uploadCards() {
     </div>`
     );
 }
-
 document.getElementById("upload").addEventListener("submit", function(add) {
     add.preventDefault();
     let book = {
