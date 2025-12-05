@@ -80,35 +80,48 @@ document.querySelector(".searchBar").addEventListener("click", () => {
 });
 
 
-/* function uploadCards() {
-    const container = document.querySelector(".container");
-    const form = document.querySelector(".upload-form");
-    title = document.getElementById("bookTitle");
-    author = document.getElementById("bookAuthor");
-    genre = document.getElementById("bookGenre");
-    link = document.getElementById("bookLink");
-    form.insertAdjacentHTML("beforeend", 
+function upload() {
+    const container = document.querySelectorAll(".container");
+    const title = document.querySelector("#bookTitle").value;
+    const author = document.querySelector("#bookAuthor").value;
+    const genre = document.querySelector("#bookGenre").value;
+    const link = document.querySelector("#bookLink")
+    container.insertAdjacentHTML("afterbegin", 
     `<div class="card">
-        <h2 class="card-header">${books.title}</h2>
-        <h3 class="card-author">${books.author}</h3>
-        <h4 class="card-genre">${books.genre}</h3>
-        <a href="${books.link}">
+        <h2 class="card-header">${title}</h2>
+        <h3 class="card-author">${author}</h3>
+        <h4 class="card-genre">${genre}</h3>
+        <a href="${link}">
           <button>Read</button>
         </a>
     </div>`
     );
-} */
-document.getElementById("upload").addEventListener("submit", function(add) {
+    books.push(upload);
+}
+
+
+
+/* document.getElementById("upload").addEventListener("submit", function(add) {
     add.preventDefault();
-    const title = document.getElementById("bookTitle").value;
-    const author = document.getElementById("bookAuthor").value;
-    const genre = document.getElementById("bookGenre").value;
-    const link = document.getElementById("bookLink").value;
-    const newBook = [title, author, genre, link];
+    const title = document.getElementById("#bookTitle").value;
+    const author = document.getElementById("#bookAuthor").value;
+    const genre = document.getElementById("#bookGenre").value;
+    const link = document.getElementById("#bookLink").value;
+    add.insertAdjacentHTML("beforeend",
+    `<div class="card">
+        <h2 class="card-header">${title}</h2>
+        <h3 class="card-author">${author}</h3>
+        <h4 class="card-genre">${genre}</h3>
+        <a href="${link}">
+          <button>Read</button>
+        </a>
+    </div>`
+    );
     books.push(newBook);
     show(newBook);
     document.getElementById("upload").reset();
-})
+}) */
+
 
 
 ////////////////////////////////////
