@@ -80,11 +80,13 @@ document.querySelector(".searchBar").addEventListener("click", () => {
 });
 
 
-function uploadCards() {
+/* function uploadCards() {
     const container = document.querySelector(".container");
     const form = document.querySelector(".upload-form");
-    let title =
-    let author = 
+    title = document.getElementById("bookTitle");
+    author = document.getElementById("bookAuthor");
+    genre = document.getElementById("bookGenre");
+    link = document.getElementById("bookLink");
     form.insertAdjacentHTML("beforeend", 
     `<div class="card">
         <h2 class="card-header">${books.title}</h2>
@@ -95,17 +97,17 @@ function uploadCards() {
         </a>
     </div>`
     );
-}
+} */
 document.getElementById("upload").addEventListener("submit", function(add) {
     add.preventDefault();
-    let book = {
-        title: document.getElementById("bookTitle"),
-        author: document.getElementById("bookAuthor"),
-        genre: document.getElementById("bookGenre"),
-        link: document.getElementById("bookLink")
-    }
-    books.push(book);
-    show(book);
+    const title = document.getElementById("bookTitle").value;
+    const author = document.getElementById("bookAuthor").value;
+    const genre = document.getElementById("bookGenre").value;
+    const link = document.getElementById("bookLink").value;
+    const newBook = [title, author, genre, link];
+    books.push(newBook);
+    show(newBook);
+    document.getElementById("upload").reset();
 })
 
 
