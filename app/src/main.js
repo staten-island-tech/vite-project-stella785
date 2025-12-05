@@ -45,14 +45,14 @@ const books = [
 //filter by search (done)
 //upload books not on site
 
-function show(books) {
+function show(book) {
     const container = document.querySelector(".container");
     container.insertAdjacentHTML("afterbegin", 
     `<div class="card">
-        <h2 class="card-header">${books.title}</h2>
-        <h3 class="card-author">${books.author}</h3>
-        <h4 class="card-genre">${books.genre}</h3>
-        <a href="${books.link}">
+        <h2 class="card-header">${book.title}</h2>
+        <h3 class="card-author">${book.author}</h3>
+        <h4 class="card-genre">${book.genre}</h3>
+        <a href="${book.link}">
           <button>Read</button>
         </a>
     </div>`
@@ -60,9 +60,9 @@ function show(books) {
 }
 books.forEach((books) => show(books));
 
-function filter(ask) {
+function filter(input) {
     const cards = document.querySelectorAll(".card");
-    const search = ask.toLowerCase();
+    const search = input.toLowerCase();
     cards.forEach((card) => {
         const title = card.querySelector(".card-header").textContent.toLowerCase();
         const author = card.querySelector(".card-author").textContent.toLowerCase();
