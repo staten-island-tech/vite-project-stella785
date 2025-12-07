@@ -80,13 +80,20 @@ document.querySelector(".searchBar").addEventListener("click", () => {
 });
 
 
-function upload() {
-    const container = document.querySelectorAll(".container");
+function upload(card) {
+    card.preventDefault();
+    // const container = document.querySelectorAll(".container");
     const title = document.querySelector("#bookTitle").value;
     const author = document.querySelector("#bookAuthor").value;
     const genre = document.querySelector("#bookGenre").value;
-    const link = document.querySelector("#bookLink")
-    container.insertAdjacentHTML("afterbegin", 
+    const link = document.querySelector("#bookLink").value;
+    const newBook = {
+        title: title,
+        author: author,
+        genre: genre,
+        link: link
+    };
+   /*  container.insertAdjacentHTML("afterbegin", 
     `<div class="card">
         <h2 class="card-header">${title}</h2>
         <h3 class="card-author">${author}</h3>
@@ -95,32 +102,11 @@ function upload() {
           <button>Read</button>
         </a>
     </div>`
-    );
-    books.push(upload);
-}
-
-
-
-/* document.getElementById("upload").addEventListener("submit", function(add) {
-    add.preventDefault();
-    const title = document.getElementById("#bookTitle").value;
-    const author = document.getElementById("#bookAuthor").value;
-    const genre = document.getElementById("#bookGenre").value;
-    const link = document.getElementById("#bookLink").value;
-    add.insertAdjacentHTML("beforeend",
-    `<div class="card">
-        <h2 class="card-header">${title}</h2>
-        <h3 class="card-author">${author}</h3>
-        <h4 class="card-genre">${genre}</h3>
-        <a href="${link}">
-          <button>Read</button>
-        </a>
-    </div>`
-    );
-    books.push(newBook);
+    ); */
     show(newBook);
-    document.getElementById("upload").reset();
-}) */
+    books.push(newBook);
+}
+document.getElementById("upload").addEventListener("submit", upload);
 
 
 
