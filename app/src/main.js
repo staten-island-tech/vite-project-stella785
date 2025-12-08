@@ -93,16 +93,6 @@ function upload(card) {
         genre: genre,
         link: link
     };
-   /*  container.insertAdjacentHTML("afterbegin", 
-    `<div class="card">
-        <h2 class="card-header">${title}</h2>
-        <h3 class="card-author">${author}</h3>
-        <h4 class="card-genre">${genre}</h3>
-        <a href="${link}">
-          <button>Read</button>
-        </a>
-    </div>`
-    ); */
     show(newBook);
     books.push(newBook);
 }
