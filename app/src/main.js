@@ -82,7 +82,6 @@ document.querySelector(".searchBar").addEventListener("click", () => {
 
 function upload(card) {
     card.preventDefault();
-    // const container = document.querySelectorAll(".container");
     const title = document.querySelector("#bookTitle").value;
     const author = document.querySelector("#bookAuthor").value;
     const genre = document.querySelector("#bookGenre").value;
