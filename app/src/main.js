@@ -59,6 +59,19 @@ function show(book) {
       <button class = "w">Want to read</button>
     </div>`
     );
+    const card = container.querySelector(".card"); //
+    const readButton = card.querySelector(".a");
+    const wantButton = card.querySelector(".w");
+
+    readButton.addEventListener("click", () => {
+        card.classList.add("readBook");
+        card.classList.remove("wantBook");
+    })
+
+    wantButton.addEventListener("click", () => {
+        card.classList.add("wantBook");
+        card.classList.remove("readBook");
+    })
 }
 books.forEach((books) => show(books));
 
@@ -125,19 +138,26 @@ function all() {
 }
 document.querySelector(".all").addEventListener("click", all);
 
-function alreadyRead() {
+function showRead() {
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
-        //if else statment saying if you click button in the card, it will show up in the section
-        
-        card.style.display = "inline-block";
+        if (card.classList.contains("readBook")) {
+            card.style.display = "inline-block";
+        } else {
+            card.style.display = "none";
+        }
     })
 }
-document.querySelector(".read").addEventListener("click", alreadyRead);
+document.querySelector(".read").addEventListener("click", showRead);
 
-function readfilter() {
+function showWant() {
     const cards = document.querySelectorAll(".card");
-    
+    cards.forEach((card) => {
+        if (card.classList.contains("wantBook")) {
+            card.style.display = "inline-block";
+        } else {
+            card.style.display = "none";
+        }
+    })
 }
-document.querySelector(".read").addEventListener("click", () => readfilter("Already Read"));
-document.querySelector(".want").addEventListener("click", () => readfilter("Want to Read"));
+document.querySelector(".want").addEventListener("click", showWant);
