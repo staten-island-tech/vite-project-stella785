@@ -55,6 +55,8 @@ function show(book) {
         <a href="${book.link}">
           <button>Read</button>
         </a>
+        <button class = "a">Already read</button>
+      <button class = "w">Want to read</button>
     </div>`
     );
 }
@@ -112,3 +114,30 @@ document.querySelector(".btn").addEventListener("click", function () {
 });
 
 // (in public folder) "/img/imagename"
+
+///////////////read/to read
+
+function all() {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.style.display = "inline-block";
+  })
+}
+document.querySelector(".all").addEventListener("click", all);
+
+function alreadyRead() {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+        //if else statment saying if you click button in the card, it will show up in the section
+        
+        card.style.display = "inline-block";
+    })
+}
+document.querySelector(".read").addEventListener("click", alreadyRead);
+
+function readfilter() {
+    const cards = document.querySelectorAll(".card");
+    
+}
+document.querySelector(".read").addEventListener("click", () => readfilter("Already Read"));
+document.querySelector(".want").addEventListener("click", () => readfilter("Want to Read"));
